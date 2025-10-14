@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ARUSO</title>
+    <meta name="description" content="Learn about ARUSO - The Voice and Leadership of Ardhi University Students. Our mission, vision, and core values.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <style>
+        .about-hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.9)), 
+                        url('images/about-bg.jpg') center/cover no-repeat;
+            color: white;
+            padding: 8rem 0 5rem;
+            text-align: center;
+        }
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .about-hero p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .about-section {
+            padding: 5rem 0;
+        }
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin: 3rem 0;
+        }
+        .about-text h2 {
+            color: #003366;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+        .about-text h2:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background: #e6b800;
+        }
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #555;
+            line-height: 1.7;
+        }
+        .about-image {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .mission-card, .vision-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .mission-card:hover, .vision-card:hover {
+            transform: translateY(-5px);
+        }
+        .mission-card i, .vision-card i {
+            font-size: 2.5rem;
+            color: #e6b800;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        .mission-card h3, .vision-card h3 {
+            color: #003366;
+            margin-bottom: 1rem;
+        }
+        .values-section {
+            background: #f9f9f9;
+            padding: 5rem 0;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: #f0f4f8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        .value-icon i {
+            font-size: 1.8rem;
+            color: #003366;
+        }
+        .value-card h4 {
+            color: #003366;
+            margin-bottom: 1rem;
+        }
+        .cta-section {
+            background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.9)), 
+                        url('images/cta-bg.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 6rem 0;
+        }
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .cta-content h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+            .about-image {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 250px;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (same as other pages) -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="c:\\Users\\HP Spectre\\Downloads\\logoardhi.jpeg" alt="ARUSO Logo" style="height: 40px; width: auto;">
+                <span>ARUSO</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About</a>
+                <a href="leadership.html">Leadership</a>
+                <a href="events.html">Events</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html" class="btn btn-nav">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About ARUSO</h1>
+            <p>Empowering Student Leadership at Ardhi University</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2>Who We Are</h2>
+                        <p>ARUSO (Ardhi University Students Organization) is the official student leadership body of Ardhi University, dedicated to representing and advocating for the rights and welfare of all students.</p>
+                        <p>Established with the vision of creating a vibrant student community, ARUSO serves as the bridge between the student body and the university administration, ensuring that student voices are heard and their concerns addressed.</p>
+                        <p>Our organization is committed to fostering leadership, academic excellence, and social responsibility among students, while promoting a culture of inclusivity, innovation, and service.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/about-1.jpg" alt="ARUSO Team">
+                    </div>
+                </div>
+
+                <div class="mission-vision">
+                    <div class="mission-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Our Mission</h3>
+                        <p>To represent and advocate for the rights and welfare of all Ardhi University students while fostering academic excellence, leadership, and social responsibility through innovative programs and initiatives.</p>
+                    </div>
+                    <div class="vision-card">
+                        <i class="fas fa-eye"></i>
+                        <h3>Our Vision</h3>
+                        <p>To be the leading student organization that shapes future leaders and creates a positive impact in the university community and beyond, while maintaining the highest standards of integrity and service.</p>
+                    </div>
+                </div>
+
+                <div class="about-grid reverse">
+                    <div class="about-image">
+                        <img src="images/about-2.jpg" alt="ARUSO Activities">
+                    </div>
+                    <div class="about-text">
+                        <h2>What We Do</h2>
+                        <p>ARUSO organizes a wide range of activities and programs designed to enhance the student experience at Ardhi University:</p>
+                        <ul style="list-style-type: disc; padding-left: 20px; margin-bottom: 1.5rem; color: #555;">
+                            <li style="margin-bottom: 0.5rem;">Represent student interests to the university administration</li>
+                            <li style="margin-bottom: 0.5rem;">Organize leadership training and development programs</li>
+                            <li style="margin-bottom: 0.5rem;">Facilitate academic and career development workshops</li>
+                            <li style="margin-bottom: 0.5rem;">Coordinate social, cultural, and sports activities</li>
+                            <li style="margin-bottom: 0.5rem;">Engage in community service and outreach programs</li>
+                            <li>Promote student welfare and well-being</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Core Values</h2>
+                <p>Guiding principles that define who we are and how we operate</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4>Integrity</h4>
+                    <p>We uphold the highest standards of honesty, transparency, and ethical conduct in all our actions and decisions.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Inclusivity</h4>
+                    <p>We value diversity and are committed to creating an inclusive environment where every student feels valued and heard.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h4>Innovation</h4>
+                    <p>We embrace creativity and forward-thinking to develop solutions that address the evolving needs of our student community.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h4>Service</h4>
+                    <p>We are dedicated to serving the student body with humility, empathy, and a commitment to positive change.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4>Excellence</h4>
+                    <p>We strive for the highest standards in all our endeavors, continuously seeking to improve and exceed expectations.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h4>Accountability</h4>
+                    <p>We take responsibility for our actions and decisions, ensuring transparency in all our operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Join Our Community</h2>
+            <p>Become part of ARUSO and help shape the future of Ardhi University students</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-light">Contact Us</a>
+                <a href="#" class="btn btn-outline-light">Get Involved</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as other pages) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <img src="c:\\Users\\HP Spectre\\Downloads\\logoardhi.jpeg" alt="ARUSO Logo" style="height: 40px; width: auto;" class="footer-logo">
+                    <p>ARUSO is the official student leadership organization of Ardhi University, dedicated to representing student interests and fostering leadership.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> ARUSO Office, Ardhi University, Dar es Salaam, Tanzania</p>
+                    <p><i class="fas fa-phone"></i> +255 123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> aruso@aru.ac.tz</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ARUSO - Ardhi University Students Organization. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - ARUSO</title>
+    <meta name="description" content="Stay updated with the latest ARUSO events, activities, and programs at Ardhi University">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="c:\Users\HP Spectre\Downloads\logoardhi.jpeg">
+    <style>
+        /* Hero Section */
+        .events-hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.9)), 
+                        url('images/events-bg.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 8rem 0 6rem;
+            position: relative;
+        }
+        
+        .events-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .events-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        /* Events Section */
+        .events-section {
+            padding: 5rem 0;
+            background-color: #f8f9fa;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #e6b800;
+        }
+        
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Events Grid */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .event-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .event-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .event-details {
+            padding: 1.5rem;
+        }
+        
+        .event-date {
+            color: #e6b800;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .event-title {
+            color: #003366;
+            margin: 0.5rem 0;
+            font-size: 1.4rem;
+        }
+        
+        .event-location {
+            color: #666;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .event-description {
+            color: #555;
+            margin: 1rem 0;
+            line-height: 1.6;
+        }
+        
+        .event-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .event-tag {
+            background: #f0f4f8;
+            color: #003366;
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: #003366;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: #e6b800;
+            color: #003366;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .events-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .event-tab {
+            padding: 0.75rem 1.5rem;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .event-tab.active, 
+        .event-tab:hover {
+            background: #003366;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .events-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .event-tab {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="c:\Users\HP Spectre\Downloads\logoardhi.jpeg" alt="ARUSO Logo" style="height: 40px; width: auto;">
+                <span>ARUSO</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="leadership.html">Leadership</a>
+                <a href="events.html" class="active">Events</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html" class="btn btn-nav">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="events-hero">
+        <div class="container">
+            <h1>Our Events</h1>
+            <p>Stay updated with the latest ARUSO activities and programs designed to enhance your university experience.</p>
+            <div style="margin-top: 2rem;">
+                <a href="#upcoming-events" class="btn btn-primary">View Upcoming Events</a>
+                <a href="#past-events" class="btn btn-outline">Past Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section id="upcoming-events" class="events-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Upcoming Events</h2>
+                <p>Join us for these exciting upcoming events and activities</p>
+            </div>
+            
+            <div class="events-tabs">
+                <button class="event-tab active" data-category="all">All Events</button>
+                <button class="event-tab" data-category="academic">Academic</button>
+                <button class="event-tab" data-category="social">Social</button>
+                <button class="event-tab" data-category="sports">Sports</button>
+                <button class="event-tab" data-category="workshop">Workshops</button>
+            </div>
+            
+            <div class="events-grid">
+                <!-- Event 1 -->
+                <div class="event-card" data-category="academic">
+                    <img src="images/events/career-fair.jpg" alt="Career Fair" class="event-image" onerror="this.src='images/placeholder.jpg'">
+                    <div class="event-details">
+                        <div class="event-date">
+                            <i class="far fa-calendar-alt"></i>
+                            November 15, 2025 • 9:00 AM - 4:00 PM
+                        </div>
+                        <h3 class="event-title">Annual Career Fair</h3>
+                        <div class="event-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            University Main Hall
+                        </div>
+                        <p class="event-description">Connect with top employers and explore career opportunities at our annual career fair. Open to all students and recent graduates.</p>
+                        <div class="event-tags">
+                            <span class="event-tag">Career</span>
+                            <span class="event-tag">Networking</span>
+                            <span class="event-tag">Workshop</span>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 1rem; display: inline-block;">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="event-card" data-category="workshop">
+                    <img src="c:\Users\HP Spectre\Downloads\aruso (4).jpg" alt="Leadership Summit" class="event-image" onerror="this.src='images/placeholder.jpg'">
+                    <div class="event-details">
+                        <div class="event-date">
+                            <i class="far fa-calendar-alt"></i>
+                            November 22, 2025 • 10:00 AM - 3:00 PM
+                        </div>
+                        <h3 class="event-title">Leadership Summit</h3>
+                        <div class="event-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Auditorium B
+                        </div>
+                        <p class="event-description">A full-day summit featuring workshops and talks from industry leaders on developing leadership skills for the modern workplace.</p>
+                        <div class="event-tags">
+                            <span class="event-tag">Leadership</span>
+                            <span class="event-tag">Workshop</span>
+                            <span class="event-tag">Development</span>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 1rem; display: inline-block;">Register Now</a>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="event-card" data-category="social">
+                    <img src="images/events/cultural.jpg" alt="Cultural Festival" class="event-image" onerror="this.src='images/placeholder.jpg'">
+                    <div class="event-details">
+                        <div class="event-date">
+                            <i class="far fa-calendar-alt"></i>
+                            December 5, 2025 • 11:00 AM - 7:00 PM
+                        </div>
+                        <h3 class="event-title">Cultural Festival</h3>
+                        <div class="event-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            University Grounds
+                        </div>
+                        <p class="event-description">Celebrate the diverse cultures represented at our university through food, music, dance, and art.</p>
+                        <div class="event-tags">
+                            <span class="event-tag">Cultural</span>
+                            <span class="event-tag">Festival</span>
+                            <span class="event-tag">Entertainment</span>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 1rem; display: inline-block;">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Events -->
+    <section id="past-events" class="events-section" style="background-color: #f0f4f8;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Past Events</h2>
+                <p>Relive the memories from our previous successful events</p>
+            </div>
+            
+            <div class="events-grid">
+                <!-- Past Event 1 -->
+                <div class="event-card">
+                    <img src="images/events/orientation.jpg" alt="Orientation Week" class="event-image" onerror="this.src='images/placeholder.jpg'">
+                    <div class="event-details">
+                        <div class="event-date">
+                            <i class="far fa-calendar-alt"></i>
+                            September 5, 2025 • 8:00 AM - 5:00 PM
+                        </div>
+                        <h3 class="event-title">Orientation Week</h3>
+                        <div class="event-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            University Grounds
+                        </div>
+                        <p class="event-description">Welcome event for new students with campus tours, information sessions, and fun activities to help you get acquainted with university life.</p>
+                        <div class="event-tags">
+                            <span class="event-tag">Orientation</span>
+                            <span class="event-tag">Campus Life</span>
+                            <span class="event-tag">Welcome</span>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 1rem; display: inline-block; background: #666;">View Photos</a>
+                    </div>
+                </div>
+
+                <!-- Past Event 2 -->
+                <div class="event-card">
+                    <img src="c:\Users\HP Spectre\Downloads\aruso (5).jpg" alt="Academic Workshop" class="event-image" onerror="this.src='images/placeholder.jpg'">
+                    <div class="event-details">
+                        <div class="event-date">
+                            <i class="far fa-calendar-alt"></i>
+                            August 20, 2025 • 10:00 AM - 2:00 PM
+                        </div>
+                        <h3 class="event-title">Academic Excellence Workshop</h3>
+                        <div class="event-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Library Auditorium
+                        </div>
+                        <p class="event-description">Interactive workshop on effective study techniques, time management, and academic success strategies.</p>
+                        <div class="event-tags">
+                            <span class="event-tag">Academic</span>
+                            <span class="event-tag">Workshop</span>
+                            <span class="event-tag">Education</span>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 1rem; display: inline-block; background: #666;">View Photos</a>
+                    </div>
+                </div>
+
+                <!-- Past Event 3 -->
+                <div class="event-card">
+                    <img src="images/events/sports.jpg" alt="Sports Day" class="event-image" onerror="this.src='images/placeholder.jpg'">
+                    <div class="event-details">
+                        <div class="event-date">
+                            <i class="far fa-calendar-alt"></i>
+                            July 15, 2025 • 8:00 AM - 6:00 PM
+                        </div>
+                        <h3 class="event-title">Annual Sports Day</h3>
+                        <div class="event-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            University Sports Ground
+                        </div>
+                        <p class="event-description">A day filled with sports competitions, team activities, and fun games for all students and staff.</p>
+                        <div class="event-tags">
+                            <span class="event-tag">Sports</span>
+                            <span class="event-tag">Fitness</span>
+                            <span class="event-tag">Team Building</span>
+                        </div>
+                        <a href="#" class="btn" style="margin-top: 1rem; display: inline-block; background: #666;">View Photos</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="gallery.html" class="btn" style="background: #666;">View More Past Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section style="background: #003366; color: white; padding: 4rem 0; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Have an Event Idea?</h2>
+            <p style="max-width: 600px; margin: 0 auto 2rem; font-size: 1.1rem;">
+                We're always looking for new and exciting event ideas from our students. Share your suggestions with us!
+            </p>
+            <a href="contact.html" class="btn btn-primary">Suggest an Event</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <img src="c:\Users\HP Spectre\Downloads\logoardhi.jpeg" alt="ARUSO Logo" style="height: 50px; width: auto;">
+                    <p>ARUSO is the official student leadership organization of Ardhi University, dedicated to representing student interests and fostering leadership.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> ARUSO Office, Ardhi University, Dar es Salaam, Tanzania</p>
+                    <p><i class="fas fa-phone"></i> +255 123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> aruso@aru.ac.tz</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ARUSO - Ardhi University Students Organization. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.event-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                document.querySelectorAll('.event-tab').forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                const category = this.dataset.category;
+                const eventCards = document.querySelectorAll('.event-card');
+                
+                eventCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

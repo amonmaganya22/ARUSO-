@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership - ARUSO</title>
+    <meta name="description" content="Meet the dedicated team leading ARUSO - Ardhi University Students Organization">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="c:\Users\HP Spectre\Downloads\logoardhi.jpeg">
+    <style>
+        /* Hero Section */
+        .leadership-hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.9)), 
+                        url('images/leadership-bg.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 8rem 0 6rem;
+            position: relative;
+        }
+        
+        .leadership-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .leadership-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        /* Leadership Section */
+        .leadership-section {
+            padding: 5rem 0;
+            background-color: #f8f9fa;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            color: #003366;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #e6b800;
+        }
+        
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Leadership Grid */
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .leader-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .leader-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .leader-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .leader-details {
+            padding: 1.5rem;
+        }
+        
+        .leader-name {
+            color: #003366;
+            font-size: 1.4rem;
+            margin: 0.5rem 0;
+        }
+        
+        .leader-position {
+            color: #e6b800;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .leader-bio {
+            color: #555;
+            margin: 1rem 0;
+            line-height: 1.6;
+            min-height: 60px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: #003366;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #f0f4f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: #003366;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Leadership Tabs */
+        .leadership-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .leadership-tab {
+            padding: 0.75rem 1.5rem;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .leadership-tab.active, 
+        .leadership-tab:hover {
+            background: #003366;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .leadership-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .leadership-tab {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="c:\Users\HP Spectre\Downloads\logoardhi.jpeg" alt="ARUSO Logo" style="height: 40px; width: auto;">
+                <span>ARUSO</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="leadership.html" class="active">Leadership</a>
+                <a href="events.html">Events</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html" class="btn btn-nav">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="leadership-hero">
+        <div class="container">
+            <h1>Our Leadership</h1>
+            <p>Meet the dedicated team leading ARUSO and working tirelessly to represent and serve the student body of Ardhi University.</p>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="leadership-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Executive Committee</h2>
+                <p>The executive committee is responsible for the overall management and strategic direction of ARUSO.</p>
+            </div>
+            
+            <div class="leadership-tabs">
+                <button class="leadership-tab active" data-category="executive">Executive</button>
+                <button class="leadership-tab" data-category="ministers">Ministers</button>
+                <button class="leadership-tab" data-category="representatives">Representatives</button>
+            </div>
+            
+            <div class="leadership-grid" id="leadershipGrid">
+                <!-- Executive Members -->
+                <div class="leader-card" data-category="executive">
+                    <img src="c:\Users\HP Spectre\Downloads\ARUSO SIMON KANYASU.jpg" alt="SIMON KANYASU" class="leader-image" onerror="this.src='images/placeholder.jpg'">
+                    <div class="leader-details">
+                        <h3 class="leader-name">SIMON KANYASU</h3>
+                        <span class="leader-position">President</span>
+                        <p class="leader-bio">Leading ARUSO with vision and dedication to represent all students and enhance the university experience.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="leader-card" data-category="executive">
+                    <img src="c:\Users\HP Spectre\Downloads\ARUSO VP.jpg" alt="CATHERINE MUSHI" class="leader-image" onerror="this.src='images/placeholder.jpg'">
+                    <div class="leader-details">
+                        <h3 class="leader-name">CATHERINE MUSHI</h3>
+                        <span class="leader-position">Vice President</span>
+                        <p class="leader-bio">Supporting the president and overseeing daily operations to ensure smooth functioning of the organization.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ministers -->
+                <div class="leader-card" data-category="ministers">
+                    <img src="c:\Users\HP Spectre\Downloads\ARUSO OSWALD.jpg" alt="Oswald Maganya" class="leader-image" onerror="this.src='images/placeholder.jpg'">
+                    <div class="leader-details">
+                        <h3 class="leader-name">Oswald Maganya</h3>
+                        <span class="leader-position">Minister of Academics</span>
+                        <p class="leader-bio">Overseeing academic affairs and ensuring student academic welfare and success.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Add more leader cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section style="background: #003366; color: white; padding: 4rem 0; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Get Involved</h2>
+            <p style="max-width: 600px; margin: 0 auto 2rem; font-size: 1.1rem;">
+                Interested in joining our leadership team? Learn how you can contribute to ARUSO's mission.
+            </p>
+            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <img src="c:\Users\HP Spectre\Downloads\logoardhi.jpeg" alt="ARUSO Logo" style="height: 50px; width: auto;">
+                    <p>ARUSO is the official student leadership organization of Ardhi University, dedicated to representing student interests and fostering leadership.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> ARUSO Office, Ardhi University, Dar es Salaam, Tanzania</p>
+                    <p><i class="fas fa-phone"></i> +255 123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> aruso@aru.ac.tz</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ARUSO - Ardhi University Students Organization. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.leadership-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                document.querySelectorAll('.leadership-tab').forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                const category = this.dataset.category;
+                const leaderCards = document.querySelectorAll('.leader-card');
+                
+                leaderCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

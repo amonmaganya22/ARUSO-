@@ -12,7 +12,7 @@
     <style>
         /* Hero Section */
         .leadership-hero {
-            background: linear-gradient(hsla(210, 22%, 93%, 0.9), rgba(0, 51, 102, 0.9)), 
+            background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.9)), 
                         url('img/leadership-bg.jpg') center/cover no-repeat;
             color: white;
             text-align: center;
@@ -70,6 +70,7 @@
             font-size: 1.1rem;
             max-width: 700px;
             margin: 0 auto;
+            line-height: 1.6;
         }
         
         /* Leadership Grid */
@@ -128,7 +129,7 @@
             display: flex;
             justify-content: center;
             gap: 1rem;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
         
         .social-links a {
@@ -153,7 +154,7 @@
         .leadership-tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 2.5rem;
+            margin: 2rem 0 3rem;
             gap: 1rem;
             flex-wrap: wrap;
         }
@@ -166,12 +167,52 @@
             cursor: pointer;
             font-weight: 500;
             transition: all 0.3s ease;
+            font-size: 1rem;
         }
         
         .leadership-tab.active, 
         .leadership-tab:hover {
             background: #003366;
             color: white;
+        }
+        
+        /* Get Involved Section */
+        .get-involved {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            margin-top: 3rem;
+        }
+        
+        .get-involved h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .get-involved p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background: #e6b800;
+            color: #003366;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #ffd700;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         @media (max-width: 768px) {
@@ -191,6 +232,10 @@
                 padding: 0.6rem 1.2rem;
                 font-size: 0.9rem;
             }
+            
+            .get-involved h2 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
@@ -199,7 +244,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="c:\Users\HP Spectre\Downloads\arusologo.jpeg" alt="ARUSO Logo" style="height: 40px; width: auto;">
+                <img src="img/arusologo.jpeg" alt="ARUSO Logo" style="height: 40px; width: auto; margin-right: 10px;">
                 <span>ARUSO</span>
             </a>
             <div class="nav-links" id="navLinks">
@@ -230,20 +275,21 @@
     <section class="leadership-section">
         <div class="container">
             <div class="section-header">
-                <h2>Executive Committee</h2>
-                <p>The executive committee is responsible for the overall management and strategic direction of ARUSO.</p>
+                <h2>Leadership Team</h2>
+                <p>Our leadership team is comprised of dedicated students who are passionate about serving the student body and enhancing the university experience.</p>
             </div>
             
             <div class="leadership-tabs">
-                <button class="leadership-tab active" data-category="executive">Executive</button>
-                <button class="leadership-tab" data-category="ministers">Ministers</button>
-                <button class="leadership-tab" data-category="representatives">Representatives</button>
+                <button class="leadership-tab active" data-category="all">All</button>
+                <button class="leadership-tab" data-category="executive">Executive</button>
+                <button class="leadership-tab" data-category="cabinet">Cabinet</button>
+                <button class="leadership-tab" data-category="ausrc">AUSRC</button>
+                <button class="leadership-tab" data-category="judiciary">Judiciary</button>
             </div>
-            
-            <div class="leadership-grid" id="leadershipGrid">
-                <!-- Executive Members -->
+            <div class="leadership-grid">
+                <!-- Executive Team -->
                 <div class="leader-card" data-category="executive">
-                    <img src="img/simon-kanyasu.jpg" alt="SIMON KANYASU" class="leader-image" onerror="this.src='img/placeholder.jpg'">
+                    <img src="img/ARUSO SIMON KANYASU.jpg" alt="SIMON KANYASU" class="leader-image" onerror="this.src='img/placeholder.jpg'">
                     <div class="leader-details">
                         <h3 class="leader-name">SIMON KANYASU</h3>
                         <span class="leader-position">President</span>
@@ -251,52 +297,119 @@
                         <div class="social-links">
                             <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
                             <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="leader-card" data-category="executive">
-                    <img src="img/catherine-mushi.jpg" alt="CATHERINE MUSHI" class="leader-image" onerror="this.src='img/placeholder.jpg'">
+                    <img src="img/ARUSO VP (1).jpg" alt="CATHERINE MUSHI" class="leader-image" onerror="this.src='img/placeholder.jpg'">
                     <div class="leader-details">
                         <h3 class="leader-name">CATHERINE MUSHI</h3>
                         <span class="leader-position">Vice President</span>
-                        <p class="leader-bio">Supporting the president and overseeing daily operations to ensure smooth functioning of the organization.</p>
+                        <p class="leader-bio">Supporting the president in executive functions and representing student interests at various university forums.</p>
                         <div class="social-links">
                             <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
                             <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Ministers -->
-                <div class="leader-card" data-category="ministers">
-                    <img src="img/oswald-maganya.jpg" alt="Oswald Maganya" class="leader-image" onerror="this.src='img/placeholder.jpg'">
+
+                <div class="leader-card" data-category="executive">
+                    <img src="img/ARUSO PS.jpg" alt="NEWTON" class="leader-image" onerror="this.src='img/placeholder.jpg'">
                     <div class="leader-details">
-                        <h3 class="leader-name">Oswald Maganya</h3>
-                        <span class="leader-position">Minister of Academics</span>
-                        <p class="leader-bio">Overseeing academic affairs and ensuring student academic welfare and success.</p>
+                        <h3 class="leader-name">NEWTON</h3>
+                        <span class="leader-position">Permanent Secretary</span>
+                        <p class="leader-bio">Overseeing the administrative functions and ensuring smooth operations within ARUSO's executive branch.</p>
                         <div class="social-links">
                             <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Add more leader cards as needed -->
+                <!-- Cabinet -->
+                <div class="leader-card" data-category="cabinet">
+                    <img src="img/ARUSO PRIME MINISTER.jpg" alt="ZAINULDIN KHAIFY" class="leader-image" onerror="this.src='img/placeholder.jpg'">
+                    <div class="leader-details">
+                        <h3 class="leader-name">ZAINULDIN KHAIFY</h3>
+                        <span class="leader-position">Prime Minister</span>
+                        <p class="leader-bio">Leading the cabinet and coordinating all ministerial activities to ensure effective service delivery to the student body.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leader-card" data-category="cabinet">
+                    <img src="img/ARUSO OSWALD.jpg" alt="OSWALD MAGANYA" class="leader-image" onerror="this.src='img/placeholder.jpg'">
+                    <div class="leader-details">
+                        <h3 class="leader-name">OSWALD MAGANYA</h3>
+                        <span class="leader-position">Deputy Prime Minister & Minister of Academics</span>
+                        <p class="leader-bio">Overseeing academic affairs and ensuring student academic welfare. As Deputy Prime Minister, assists in coordinating ministerial activities.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AUSRC Leadership -->
+                <div class="leader-card" data-category="ausrc">
+                    <img src="img/ARUSO ALEX MELLA.jpg" alt="ALEX MELLA" class="leader-image" onerror="this.src='img/placeholder.jpg'">
+                    <div class="leader-details">
+                        <h3 class="leader-name">ALEX MELLA</h3>
+                        <span class="leader-position">AUSRC Speaker</span>
+                        <p class="leader-bio">Presiding over AUSRC parliamentary sessions and ensuring proper legislative procedures are followed.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leader-card" data-category="ausrc">
+                    <img src="img/ARUSO EDNA JUSTINE.jpg" alt="EDNA JUSTINE" class="leader-image" onerror="this.src='img/placeholder.jpg'">
+                    <div class="leader-details">
+                        <h3 class="leader-name">EDNA JUSTINE</h3>
+                        <span class="leader-position">Deputy Speaker AUSRC</span>
+                        <p class="leader-bio">Assisting the Speaker in parliamentary proceedings and ensuring decorum during AUSRC sessions.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leader-card" data-category="ausrc">
+                    <img src="img/ARUSO ESTER.jpg" alt="ESTER" class="leader-image" onerror="this.src='img/placeholder.jpg'">
+                    <div class="leader-details">
+                        <h3 class="leader-name">ESTER</h3>
+                        <span class="leader-position">Clerk of Parliament</span>
+                        <p class="leader-bio">Managing parliamentary records and ensuring proper documentation of all AUSRC proceedings.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Judiciary -->
+                <div class="leader-card" data-category="judiciary">
+                    <img src="img/ARUSO MUCHUNGUZI.jpg" alt="MUCHUNGUZI" class="leader-image" onerror="this.src='img/placeholder.jpg'">
+                    <div class="leader-details">
+                        <h3 class="leader-name">MUCHUNGUZI</h3>
+                        <span class="leader-position">Chief Justice</span>
+                        <p class="leader-bio">Heading the student judicial system and ensuring justice and fairness in all student matters.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section style="background: #003366; color: white; padding: 4rem 0; text-align: center;">
+    <!-- Get Involved Section -->
+    <section class="get-involved">
         <div class="container">
-            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Get Involved</h2>
-            <p style="max-width: 600px; margin: 0 auto 2rem; font-size: 1.1rem;">
-                Interested in joining our leadership team? Learn how you can contribute to ARUSO's mission.
-            </p>
-            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            <h2>Get Involved</h2>
+            <p>Interested in joining our leadership team? Learn how you can contribute to ARUSO's mission.</p>
+            <a href="contact.html" class="btn-primary">Contact Us</a>
         </div>
     </section>
 
@@ -308,10 +421,10 @@
                     <img src="img/arusologo.jpg" alt="ARUSO Logo" style="height: 50px; width: auto;">
                     <p>ARUSO is the official student leadership organization of Ardhi University, dedicated to representing student interests and fostering leadership.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -359,6 +472,17 @@
                 });
             });
         });
+
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+        }
     </script>
     <script src="js/script.js"></script>
 </body>
